@@ -1,0 +1,47 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  width: 970px;
+  height: 60px;
+  margin: 30px auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+}
+
+.barBtns {
+  display: flex;
+  align-items: center;
+}
+
+.clientName {
+  color: #fff;
+  font-size: 20px;
+}
+
+.settings {
+  margin: 0 25px;
+  cursor: pointer;
+}
+
+.btnLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+  cursor: pointer;
+}

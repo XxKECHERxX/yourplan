@@ -1,0 +1,85 @@
+.react-calendar {
+  border-radius: 10px;
+  background-color: #282828;
+  height: 250px;
+  margin-bottom: 7px;
+}
+
+.react-calendar__navigation {
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: 45px;
+}
+
+.react-calendar__navigation__label {
+  border: 0;
+  background-color: #282828;
+  font-size: 16px;
+  color: #ffffffbb;
+  font-family: 'Montserrat';
+}
+
+.react-calendar__navigation__prev-button {
+  display: flex;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background-color: #282828;
+  color: #ffffffbb;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.react-calendar__navigation__next-button {
+  display: flex;
+  justify-content: center;
+  border: 0;
+  border-radius: 10px;
+  background-color: #282828;
+  color: #ffffffbb;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.react-calendar__navigation__prev2-button {
+  display: none;
+}
+
+.react-calendar__navigation__next2-button {
+  display: none;
+}
+
+.react-calendar__month-view__weekdays {
+  border: 2px solid #a39341;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffffbb;
+  text-align: center;
+  height: 25px;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+.react-calendar__month-view__days__day {
+  background-color: #282828;
+  font-size: 16px;
+  color: #ffffffbb;
+  border: 0;
+  height: 30px;
+}
+
+.react-calendar__tile--now {
+  border: 1px solid #a39341;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #ffffff58;
+}

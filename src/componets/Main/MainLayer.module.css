@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  width: 970px;
+  margin: auto;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  margin: 51px 15px;
+}

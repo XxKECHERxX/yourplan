@@ -1,0 +1,58 @@
+.stat {
+  width: 275px;
+  height: 164px;
+  border-radius: 10px;
+  border: 2px solid #a34141;
+  margin: 7px 0;
+}
+
+.table {
+  color: #fff;
+  height: auto;
+  width: auto;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+  height: 40px;
+  justify-items: center;
+  align-items: center;
+  border-bottom: solid 1px #fff;
+}
+
+.columns div {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  width: auto;
+  height: 19px;
+}
+
+.rowUsual {
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+  height: 40px;
+  justify-items: center;
+  align-items: center;
+  border-bottom: solid 1px #fff;
+}
+
+.rowExtra {
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+  height: 40px;
+  justify-items: center;
+  align-items: center;
+  border-bottom: solid 1px #fff;
+}
+
+.rowTotal {
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+  height: 40px;
+  justify-items: center;
+  align-items: center;
+}
