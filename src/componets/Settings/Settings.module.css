@@ -1,0 +1,119 @@
+.secSet {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #171717e5;
+}
+
+.frame {
+  position: absolute;
+  width: 500px;
+  height: 590px;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+  background-color: #171717;
+}
+
+.function {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  color: #ffffff;
+  text-align: center;
+}
+
+.fearture {
+  display: grid;
+  grid-template-columns: 30% 30%;
+  grid-template-rows: repeat(3, 35px);
+  justify-items: flex-start;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.numToDoList {
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+.instruction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  width: 90%;
+  color: #ffffffcc;
+  font-size: 16px;
+}
+
+.instruction p {
+  margin: 10px 0;
+  height: 50px;
+}
+
+.qlues {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: repeat(7, 35px);
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  color: #ffffffcc;
+  font-size: 16px;
+}
+
+.btnsListFrame {
+  display: flex;
+  width: 42px;
+  height: 22px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px solid #a39341;
+}
+
+.btnsItemDones {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 21px;
+  border-radius: 5px;
+  border: 2px solid #0e6600;
+}
+
+.btnsItemDelete {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 21px;
+  border-radius: 5px;
+  border: 2px solid #a34141;
+}
+
+.btnsItemExtra {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+}
+
+.btnClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
