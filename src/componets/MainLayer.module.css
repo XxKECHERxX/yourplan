@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  justify-content: center;
   width: 970px;
   margin: auto;
 }

@@ -1,5 +1,5 @@
 .frameWeather {
-  width: 275px;
+  width: inherit;
   height: 120px;
   border-radius: 10px;
   border: 2px solid #a39341;
@@ -7,14 +7,14 @@
 }
 
 .info {
+  position: relative;
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 130px 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
-  justify-items: end;
+  justify-items: start;
   color: #ffffffbc;
   height: 100%;
-  padding: 0 10px;
   font-size: 14px;
   font-family: 'Montserrat';
 }
@@ -22,7 +22,19 @@
 .temp {
   justify-self: center;
   grid-column-start: 1;
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-row-end: 4;
   font-size: 32px;
+}
+
+.icon img {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 75px;
+  height: 75px;
+}
+
+.dayNow {
+  font-size: 24px;
 }

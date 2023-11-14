@@ -1,5 +1,5 @@
 .stat {
-  width: 275px;
+  width: inherit;
   height: 164px;
   border-radius: 10px;
   border: 2px solid #a34141;
