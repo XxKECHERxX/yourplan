@@ -16,17 +16,18 @@ import {
   changeCityWeather,
 } from '../store/gearSlice'
 
-const LIGHT = '#ffffff'
-const DARK = '#ffffff5a'
+const LIGHT_COLOR = '#ffffff'
+const DARK_COLOR = '#ffffff5a'
 
 const Settings = () => {
   const [posScroll, setPosScroll] = useState('')
-  const [btnOnCal, setBtnOnCal] = useState(LIGHT)
-  const [btnOffCal, setBtnOffCal] = useState(DARK)
-  const [btnOnWea, setBtnOnWea] = useState(LIGHT)
-  const [btnOffWea, setBtnOffWea] = useState(DARK)
-  const [btnOnStat, setBtnOnStat] = useState(LIGHT)
-  const [btnOffStat, setBtnOffStat] = useState(DARK)
+
+  const [btnOnCal, setBtnOnCal] = useState(LIGHT_COLOR)
+  const [btnOffCal, setBtnOffCal] = useState(DARK_COLOR)
+  const [btnOnWea, setBtnOnWea] = useState(LIGHT_COLOR)
+  const [btnOffWea, setBtnOffWea] = useState(DARK_COLOR)
+  const [btnOnStat, setBtnOnStat] = useState(LIGHT_COLOR)
+  const [btnOffStat, setBtnOffStat] = useState(DARK_COLOR)
 
   const handlePosScrollBar = () => {
     setPosScroll(window.scrollY)
@@ -45,38 +46,36 @@ const Settings = () => {
 
   const openCalendar = () => {
     dispatch(showCalen(true))
-    setBtnOnCal(LIGHT)
-    setBtnOffCal(DARK)
+    setBtnOnCal(LIGHT_COLOR)
+    setBtnOffCal(DARK_COLOR)
   }
   const closeCalendar = () => {
     dispatch(showCalen(false))
-    setBtnOnCal(DARK)
-    setBtnOffCal(LIGHT)
+    setBtnOnCal(DARK_COLOR)
+    setBtnOffCal(LIGHT_COLOR)
   }
   const openWeather = () => {
     dispatch(showWeath(true))
-    setBtnOnWea(LIGHT)
-    setBtnOffWea(DARK)
+    setBtnOnWea(LIGHT_COLOR)
+    setBtnOffWea(DARK_COLOR)
   }
   const closeWeather = () => {
     dispatch(showWeath(false))
-    setBtnOnWea(DARK)
-    setBtnOffWea(LIGHT)
+    setBtnOnWea(DARK_COLOR)
+    setBtnOffWea(LIGHT_COLOR)
   }
   const openStatistic = () => {
     dispatch(showStat(true))
-    setBtnOnStat(LIGHT)
-    setBtnOffStat(DARK)
+    setBtnOnStat(LIGHT_COLOR)
+    setBtnOffStat(DARK_COLOR)
   }
   const closeStatistic = () => {
     dispatch(showStat(false))
-    setBtnOnStat(DARK)
-    setBtnOffStat(LIGHT)
+    setBtnOnStat(DARK_COLOR)
+    setBtnOffStat(LIGHT_COLOR)
   }
 
   const [city, setCity] = useState('')
-
-  // let witchCity = useSelector((state) => state.gear.cityWeather)
 
   const cityChange = (e) => {
     e.preventDefault()
@@ -140,9 +139,8 @@ const Settings = () => {
               <label>
                 <input
                   className={styles.city}
-                  value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder='Москва'
+                  placeholder="Москва"
                 />
               </label>
               <button type="submit" className={styles.buttonCitySubmmit}>

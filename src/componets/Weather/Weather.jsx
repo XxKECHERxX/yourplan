@@ -6,7 +6,7 @@ const Weather = () => {
   const [location, setLocation] = useState(null)
   const [weather, setWeather] = useState(null)
 
-  const city = useSelector(state => state.gear.cityWeather)
+  const city = useSelector((state) => state.gear.cityWeather)
 
   useEffect(() => {
     fetch(

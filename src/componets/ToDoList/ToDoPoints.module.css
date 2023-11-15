@@ -1,0 +1,76 @@
+.pointsFrame {
+  width: 640px;
+  height: auto;
+}
+
+.point {
+  display: flex;
+}
+
+.pointBox {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 20px max-content;
+  row-gap: 20px;
+  align-items: center;
+  width: 550px;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+  font-size: 16px;
+}
+
+.pointTopic {
+  font-weight: bold;
+}
+
+.pointDate {
+  justify-self: end;
+}
+
+.whatToDo {
+  font-style: italic;
+}
+
+.btnExtra {
+  width: 20px;
+  height: 20px;
+  justify-self: end;
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+}
+
+.btnDone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  background-color: #00000000;
+  border-radius: 10px;
+  border: 2px solid #0e6600;
+  cursor: pointer;
+}
+
+.btnDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  background-color: #00000000;
+  border-radius: 10px;
+  border: 2px solid #a34141;
+  cursor: pointer;
+}

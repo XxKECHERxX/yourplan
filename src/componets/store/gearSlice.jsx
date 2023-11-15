@@ -29,6 +29,7 @@ const gearSlice = createSlice({
   },
 })
 
-export const { showSet, showCalen, showWeath, showStat, changeCityWeather } = gearSlice.actions
+export const { showSet, showCalen, showWeath, showStat, changeCityWeather } =
+  gearSlice.actions
 
 export default gearSlice.reducer
