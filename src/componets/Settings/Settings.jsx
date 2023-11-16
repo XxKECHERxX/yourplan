@@ -7,13 +7,14 @@ import Done from '../icons/Done'
 import Delete from '../icons/Delete'
 import Close from '../icons/Close'
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {
   showSet,
   showCalen,
   showWeath,
   showStat,
   changeCityWeather,
+  changeAmountCase,
 } from '../store/gearSlice'
 
 const LIGHT_COLOR = '#ffffff'
@@ -76,10 +77,15 @@ const Settings = () => {
   }
 
   const [city, setCity] = useState('')
+  const [numOfCase, setNumOfCase] = useState('')
 
   const cityChange = (e) => {
     e.preventDefault()
     dispatch(changeCityWeather(city))
+  }
+  const numChange = (e) => {
+    e.preventDefault()
+    dispatch(changeAmountCase(numOfCase))
   }
 
   return (
@@ -173,7 +179,21 @@ const Settings = () => {
             </div>
 
             <div className={styles.showToDo}>Количество отображаемых дел</div>
-            <div className={styles.amountToDo}>4</div>
+            <form onSubmit={numChange}>
+              <label>
+                <input
+                  className={styles.amountToDo}
+                  onChange={(e) => setNumOfCase(e.target.value)}
+                  placeholder="4"
+                />
+              </label>
+              <button type="submit" className={styles.buttonCitySubmmit}>
+                <Done />
+              </button>
+              <button type="reset" className={styles.buttonCitySubmmit}>
+                <Delete />
+              </button>
+            </form>
           </div>
         </div>
         <div className={styles.instruction}>

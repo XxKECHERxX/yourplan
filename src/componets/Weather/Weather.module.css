@@ -10,7 +10,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 130px 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr);
   align-items: center;
   justify-items: start;
   color: #ffffffbc;

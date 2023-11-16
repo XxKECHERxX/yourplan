@@ -30,6 +30,7 @@
   display: grid;
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: repeat(4, 35px);
+  column-gap: 10px;
   justify-items: flex-start;
   align-items: center;
   color: #ffffff;
@@ -75,11 +76,16 @@
 }
 
 .amountToDo {
-  width: 50px;
-  justify-items: center;
+  width: 75px;
+  grid-column-start: 3;
   border: 2px solid #a39341;
   border-radius: 5px;
-  justify-content: center;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #00000000;
+  margin-right: 10px;
 }
 
 .fearture button {

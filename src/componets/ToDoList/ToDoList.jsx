@@ -2,9 +2,11 @@ import styles from './ToDoList.module.css'
 import Search from '../icons/Search'
 import Extra from '../icons/Extra'
 import Plus from '../icons/Plus'
+// import Dots from '../icons/Dots'
 import ToDoPoints from './ToDoPoints'
 import { useDispatch, useSelector } from 'react-redux'
 import { showForm } from '../store/addToDoSlice'
+import { useState } from 'react'
 
 const ToDoList = () => {
   const dispatch = useDispatch()
@@ -14,8 +16,6 @@ const ToDoList = () => {
   }
 
   const caseList = useSelector((state) => state.addToDo.list)
-
-  console.log(caseList)
 
   return (
     <div className={styles.toDoFrame}>
@@ -43,6 +43,11 @@ const ToDoList = () => {
           </button>
         </div>
       )}
+      {/* {caseList.length > numVisibleCases && (
+        <div className={styles.moreBar} onClick={openFullList}>
+          <Dots />
+        </div>
+      )} */}
     </div>
   )
 }

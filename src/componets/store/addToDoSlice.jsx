@@ -21,7 +21,18 @@ const addToDoSlice = createSlice({
         topic: newCase.nameCase,
         date: newCase.dateCase,
         comment: newCase.descriptionCase,
+        isDone: false,
       })
+    },
+    markDoneCase(state, action) {
+      const existCase = state.list.find((item) => item.id === action.payload.id)
+
+      existCase.isDone ? (existCase.isDone = false) : (existCase.isDone = true)
+    },
+    markExtraCase(state, action) {
+      const existCase = state.list.find((item) => item.id === action.payload.id)
+
+      existCase.extra ? (existCase.extra = false) : (existCase.extra = true)
     },
     deleteCase(state, action) {
       const existCase = state.list.find((item) => item.id === action.payload.id)
@@ -31,6 +42,7 @@ const addToDoSlice = createSlice({
   },
 })
 
-export const { showForm, addCase, deleteCase } = addToDoSlice.actions
+export const { showForm, addCase, markDoneCase, markExtraCase, deleteCase } =
+  addToDoSlice.actions
 
 export default addToDoSlice.reducer

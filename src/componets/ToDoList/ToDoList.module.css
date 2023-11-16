@@ -50,3 +50,14 @@
   font-size: 16px;
   color: #ffffff80;
 }
+
+.moreBar {
+  display: flex;
+  width: 590px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+  cursor: pointer;
+}

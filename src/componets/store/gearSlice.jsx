@@ -26,10 +26,13 @@ const gearSlice = createSlice({
     changeCityWeather(state, action) {
       state.cityWeather = action.payload
     },
+    changeAmountCase(state, action) {
+      state.amountItemToDo = action.payload
+    },
   },
 })
 
-export const { showSet, showCalen, showWeath, showStat, changeCityWeather } =
+export const { showSet, showCalen, showWeath, showStat, changeCityWeather, changeAmountCase } =
   gearSlice.actions
 
 export default gearSlice.reducer

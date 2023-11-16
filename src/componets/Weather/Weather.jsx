@@ -31,12 +31,23 @@ const Weather = () => {
     }
   }, [location])
 
+  function getWeekDay(date) {
+    let days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
+
+    return days[date.getDay()]
+  }
+  let currDate = new Date()
+  let toDay = getWeekDay(currDate)
+
   return (
     <div className={styles.frameWeather}>
       {weather && (
         <div className={styles.info}>
           <div className={styles.temp}>
-            + {weather.main.temp_max.toFixed()} С
+            {weather.main.temp_max.toFixed() >= 0
+              ? `+ ${weather.main.temp_max.toFixed()}`
+              : weather.main.temp_max.toFixed()}{' '}
+            C
           </div>
           <div className={styles.icon}>
             <img
@@ -44,7 +55,7 @@ const Weather = () => {
               alt="Текущая погода"
             />
           </div>
-          <div className={styles.dayNow}>Среда</div>
+          <div className={styles.dayNow}>{toDay}</div>
           <div>Влажность {weather.main.humidity} %</div>
           <div>Давление {(weather.main.pressure / 1.33).toFixed()} мм</div>
         </div>
