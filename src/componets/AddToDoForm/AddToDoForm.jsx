@@ -14,7 +14,7 @@ const AddToDoForm = () => {
   const [descriptionCase, setDescriptionCase] = useState('')
   const [extraCase, setExtraCase] = useState(false)
 
-  const handlePosScrollBar = () => {
+    const handlePosScrollBar = () => {
     setPosScroll(window.scrollY)
   }
 

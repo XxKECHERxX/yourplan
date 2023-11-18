@@ -7,14 +7,14 @@ import Done from '../icons/Done'
 import Delete from '../icons/Delete'
 import Close from '../icons/Close'
 import { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   showSet,
   showCalen,
   showWeath,
   showStat,
   changeCityWeather,
-  changeAmountCase,
+  changeLengthList,
 } from '../store/gearSlice'
 
 const LIGHT_COLOR = '#ffffff'
@@ -22,6 +22,9 @@ const DARK_COLOR = '#ffffff5a'
 
 const Settings = () => {
   const [posScroll, setPosScroll] = useState('')
+
+  const newCity = useSelector((state) => state.gear.cityWeather)
+  const newNum = useSelector((state) => state.gear.currNumVisList)
 
   const [btnOnCal, setBtnOnCal] = useState(LIGHT_COLOR)
   const [btnOffCal, setBtnOffCal] = useState(DARK_COLOR)
@@ -85,7 +88,7 @@ const Settings = () => {
   }
   const numChange = (e) => {
     e.preventDefault()
-    dispatch(changeAmountCase(numOfCase))
+    dispatch(changeLengthList(numOfCase))
   }
 
   return (
@@ -146,7 +149,7 @@ const Settings = () => {
                 <input
                   className={styles.city}
                   onChange={(e) => setCity(e.target.value)}
-                  placeholder="Москва"
+                  placeholder={newCity}
                 />
               </label>
               <button type="submit" className={styles.buttonCitySubmmit}>
@@ -184,7 +187,7 @@ const Settings = () => {
                 <input
                   className={styles.amountToDo}
                   onChange={(e) => setNumOfCase(e.target.value)}
-                  placeholder="4"
+                  placeholder={newNum}
                 />
               </label>
               <button type="submit" className={styles.buttonCitySubmmit}>

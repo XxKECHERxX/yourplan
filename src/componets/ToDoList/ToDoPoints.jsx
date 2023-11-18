@@ -6,15 +6,21 @@ import Delete from '../icons/Delete'
 import Dots from '../icons/Dots'
 import { useSelector, useDispatch } from 'react-redux'
 import { markDoneCase, markExtraCase, deleteCase } from '../store/addToDoSlice'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import { changeAmountCase } from '../store/gearSlice'
 
 const LIGHT_COLOR = '#fff'
 const DARK_COLOR = '#ffffff66'
 
 const ToDoPoints = () => {
   const caseList = useSelector((state) => state.addToDo.list)
-
   const numVisibleCases = useSelector((state) => state.gear.amountItemToDo)
+  const currNumVisList = useSelector((state) => state.gear.currNumVisList)
+  const numsVisibleRef = useRef(currNumVisList)
+
+  useEffect(() => {
+    numsVisibleRef.current = currNumVisList
+  })
 
   const [visiblePart, setVisiblePart] = useState(caseList)
   const [isOpenFull, setIsOpenFull] = useState(false)
@@ -26,16 +32,6 @@ const ToDoPoints = () => {
       setVisiblePart(caseList)
     }
   }, [caseList.length, caseList, numVisibleCases])
-
-  const openFullList = () => {
-    if (!isOpenFull) {
-      setVisiblePart(caseList.slice(0, caseList.length))
-      setIsOpenFull(true)
-    } else {
-      setVisiblePart(caseList.slice(0, numVisibleCases))
-      setIsOpenFull(false)
-    }
-  }
 
   const dispatch = useDispatch()
 
@@ -49,6 +45,16 @@ const ToDoPoints = () => {
 
   const dltCase = (el) => {
     dispatch(deleteCase(el))
+  }
+
+  const openFullList = () => {
+    if (!isOpenFull) {
+      setIsOpenFull(true)
+      dispatch(changeAmountCase(caseList.length))
+    } else {
+      setIsOpenFull(false)
+      dispatch(changeAmountCase(numsVisibleRef.current))
+    }
   }
 
   return (
@@ -92,7 +98,7 @@ const ToDoPoints = () => {
           </div>
         )
       })}
-      {caseList.length > numVisibleCases && (
+      {caseList.length > numsVisibleRef.current && (
         <div className={styles.moreBar} onClick={openFullList}>
           <Dots />
         </div>

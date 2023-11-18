@@ -9,6 +9,7 @@ const gearSlice = createSlice({
     cityWeather: 'Москва',
     showStatTable: true,
     amountItemToDo: '4',
+    currNumVisList: '4'
   },
   reducers: {
     showSet(state, action) {
@@ -29,10 +30,14 @@ const gearSlice = createSlice({
     changeAmountCase(state, action) {
       state.amountItemToDo = action.payload
     },
+    changeLengthList(state, action) {
+      state.currNumVisList = action.payload
+      state.amountItemToDo = action.payload
+    },
   },
 })
 
-export const { showSet, showCalen, showWeath, showStat, changeCityWeather, changeAmountCase } =
+export const { showSet, showCalen, showWeath, showStat, changeCityWeather, changeAmountCase, changeLengthList } =
   gearSlice.actions
 
 export default gearSlice.reducer
