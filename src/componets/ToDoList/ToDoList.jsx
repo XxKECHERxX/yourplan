@@ -2,10 +2,11 @@ import styles from './ToDoList.module.css'
 import Search from '../icons/Search'
 import Sort from '../icons/Sort'
 import Plus from '../icons/Plus'
+import Refresh from '../icons/Refresh'
 import ToDoPoints from './ToDoPoints'
 import FilterToDos from './FiltersToDos'
 import { useDispatch, useSelector } from 'react-redux'
-import { showForm } from '../store/addToDoSlice'
+import { showForm, searchTopic, sortFromNewToOld } from '../store/addToDoSlice'
 import { useState } from 'react'
 
 const ToDoList = () => {
@@ -26,8 +27,15 @@ const ToDoList = () => {
     setTypeOfsort(false)
   }
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault()
     setTypeOfsort(false)
+    dispatch(searchTopic(findTopic))
+  }
+
+  const handleRefresh = () => {
+    setFindTopic('')
+    dispatch(sortFromNewToOld())
   }
 
   return (
@@ -35,25 +43,35 @@ const ToDoList = () => {
       <div className={styles.menuList}>
         <div className={styles.topic}>Список дел</div>
         <div className={styles.btnsBar}>
-          {/* {!typeOfsort ? (
-            <form>
-              <label>
-                <input
-                  type="text"
-                  value={findTopic}
-                  onChange={(e) => setFindTopic(e.target.value)}
-                  className={styles.search}
-                  placeholder="поиск по названию"
-                />
-              </label>
-              <button className={styles.btnSearch}><Search /></button>
-            </form>
+          {!typeOfsort ? (
+            <>
+              <form className={styles.search} onSubmit={handleSearch}>
+                <label>
+                  <input
+                    type="text"
+                    value={findTopic}
+                    onChange={(e) => setFindTopic(e.target.value)}
+                    placeholder="ключевое слово"
+                  />
+                </label>
+                <button className={styles.btnSearch} type="submit">
+                  <Search />
+                </button>
+              </form>
+              <button
+                className={styles.btnRefresh}
+                type="button"
+                onClick={handleRefresh}
+              >
+                <Refresh />
+              </button>
+            </>
           ) : (
-            ''
-          )} */}
-          <button className={styles.btn} onClick={handleSearch}>
-            <Search />
-          </button>
+            <button className={styles.btn} onClick={handleSearch}>
+              <Search />
+            </button>
+          )}
+
           {typeOfsort ? <FilterToDos /> : ''}
           {typeOfsort ? (
             <button

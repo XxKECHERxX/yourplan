@@ -19,6 +19,7 @@ const addToDoSlice = createSlice({
         id: newId,
         extra: newCase.extraCase,
         topic: newCase.nameCase,
+        keyWords: newCase.nameCase.toLowerCase().split(' '),
         date: newCase.dateCase.split('-').reverse().join('.'),
         dateCode: newCase.dateCase.split('-').join(''),
         comment: newCase.descriptionCase,
@@ -41,22 +42,24 @@ const addToDoSlice = createSlice({
       state.list = state.list.filter((item) => item.id !== existCase.id)
     },
     chooseExtra(state, action) {
-      const extraCases = state.list.filter((item) => item.extra === true)
-      const notExtraCases = state.list.filter((item) => item.extra === false)
-
-      state.list = extraCases.concat(notExtraCases)
+      state.list = state.list.sort((a, b) => b.extra - a.extra)
     },
-    sortFromNewToOld(state,action) {
+    sortFromNewToOld(state, action) {
       state.list = state.list.sort((a, b) => b.id - a.id)
     },
     sortByTime(state, action) {
       state.list = state.list.sort((a, b) => b.dateCode - a.dateCode)
     },
     filterIsDone(state, action) {
-      const doneCases = state.list.filter((item) => item.isDone === true)
-      const notDoneCases = state.list.filter((item) => item.isDone === false)
+      state.list = state.list.sort((a, b) => a.isDone - b.isDone)
+    },
+    searchTopic(state, action) {
+      let keyWord = action.payload.toLowerCase()
 
-      state.list = notDoneCases.concat(doneCases)
+      let hasKeyCases = state.list.filter((el) => el.keyWords.includes(keyWord))
+      let NotHasKeyCases = state.list.filter((el) => !el.keyWords.includes(keyWord))
+
+      state.list = hasKeyCases.concat(NotHasKeyCases)
     },
   },
 })
@@ -70,7 +73,8 @@ export const {
   chooseExtra,
   sortFromNewToOld,
   sortByTime,
-  filterIsDone
+  filterIsDone,
+  searchTopic
 } = addToDoSlice.actions
 
 export default addToDoSlice.reducer

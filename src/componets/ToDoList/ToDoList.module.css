@@ -34,6 +34,9 @@
   border-radius: 10px;
   border: 2px solid #a39341;
 }
+.btn:hover {
+  background-color: #a3934111;
+}
 
 .listFrame {
   display: flex;
@@ -63,18 +66,63 @@
 }
 
 .search {
-  width: 150px;
-  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
   margin: 0 5px;
   padding: 0;
-  padding-inline-start: 10px;
-  padding-inline-end: 10px;
   background-color: #00000000;
   border-radius: 10px;
   border: 2px solid #a39341;
+  overflow: hidden;
+}
+
+.search input {
+  height: 28px;
+  border: 0;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  border-right: 1px solid #a39341;
+  background-color: #00000000;
+  color: #ffffffab;
+  font-family: 'Montserrat';
+}
+
+.search input:focus {
+  font-family: 'Montserrat';
+  color: #ffffffab;
+  outline: 0;
 }
 
 .btnSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 50px;
   border: 0;
+  padding: 0;
   background-color: #00000000;
+  cursor: pointer;
+}
+.btnSearch:hover {
+  background-color: #a3934111;
+}
+
+.btnRefresh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 35px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 8px;
+  background-color: #00000000;
+  cursor: pointer;
+}
+.btnRefresh:hover {
+  background-color: #a3934111;
 }
