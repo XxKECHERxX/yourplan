@@ -9,7 +9,7 @@
 .info {
   position: relative;
   display: grid;
-  grid-template-columns: 130px 1fr;
+  grid-template-columns: 120px 1fr;
   grid-template-rows: repeat(1fr);
   align-items: center;
   justify-items: start;

@@ -2,6 +2,7 @@
   width: 640px;
   height: auto;
   padding: 0 10px;
+  margin-bottom: 50px;
 }
 
 .menuList {
@@ -91,6 +92,8 @@
 }
 
 .search input:focus {
+  display: flex;
+  align-items: flex-start;
   font-family: 'Montserrat';
   color: #ffffffab;
   outline: 0;
@@ -115,7 +118,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
+  height: auto;
   width: 35px;
   border: 0;
   border-radius: 10px;

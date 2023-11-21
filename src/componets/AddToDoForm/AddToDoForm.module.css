@@ -56,6 +56,25 @@
   font-family: 'Montserrat';
   padding-inline-start: 10px;
   padding-inline-end: 10px;
+  position: relative;
+}
+
+.formToDo form label textarea {
+  min-height: 120px;
+  resize: horizontal;
+  min-width: 400px;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+  background: #00000000;
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Montserrat';
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  position: relative;
 }
 
 .btnsForm {

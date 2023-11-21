@@ -14,7 +14,7 @@ const AddToDoForm = () => {
   const [descriptionCase, setDescriptionCase] = useState('')
   const [extraCase, setExtraCase] = useState(false)
 
-    const handlePosScrollBar = () => {
+  const handlePosScrollBar = () => {
     setPosScroll(window.scrollY)
   }
 
@@ -71,6 +71,7 @@ const AddToDoForm = () => {
             <label>
               <input
                 name="topic"
+                type="text"
                 value={nameCase}
                 onChange={(e) => setNameCase(e.target.value)}
               />
@@ -89,10 +90,8 @@ const AddToDoForm = () => {
             </label>
             <div className={styles.nameInput}>Описание</div>
             <label>
-              <input
-                style={{
-                  height: '150px',
-                }}
+              <textarea
+                type="text"
                 name="comment"
                 value={descriptionCase}
                 onChange={(e) => setDescriptionCase(e.target.value)}

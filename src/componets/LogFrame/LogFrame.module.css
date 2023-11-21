@@ -1,0 +1,98 @@
+.secLog {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #171717e5;
+}
+
+.logFrame {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 150px;
+  width: 500px;
+  height: 350px;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+  background-color: #171717;
+}
+
+.btnClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-color: #171717;
+  border: 0;
+}
+
+.logo {
+  font-family: 'Montserrat';
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.logo span {
+  color: #0e6600;
+}
+
+.logFrame form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logFrame form label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.logFrame form label input {
+  width: 300px;
+  height: 35px;
+  border-radius: 10px;
+  border: 2px solid #a39341;
+  background-color: #00000000;
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Montserrat';
+  text-align: center;
+}
+
+.btnsEnter {
+  display: flex;
+}
+
+.btnsEnter button {
+  display: flex;
+  padding: 10px 20px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #00000000;
+  border: 2px solid #a39341;
+  cursor: pointer;
+}
+
+.btnsEnter button:hover {
+  background-color: #a3934111;
+}
+
+.error {
+  color: #a34141;
+  font-size: 14px;
+}

@@ -18,6 +18,9 @@
   border-radius: 10px;
   border: 2px solid #a39341;
 }
+.logo span {
+  color: #0e6600;
+}
 
 .barBtns {
   display: flex;
@@ -30,7 +33,10 @@
 }
 
 .settings {
-  margin: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 25px;
   cursor: pointer;
 }
 
@@ -41,7 +47,7 @@
   padding: 10px 20px 10px 20px;
   margin: 0;
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   border-radius: 10px;
   border: 2px solid #a39341;
   cursor: pointer;

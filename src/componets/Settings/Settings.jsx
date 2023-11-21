@@ -22,16 +22,14 @@ const DARK_COLOR = '#ffffff5a'
 
 const Settings = () => {
   const [posScroll, setPosScroll] = useState('')
+  const [city, setCity] = useState('')
+  const [numOfCase, setNumOfCase] = useState('')
 
   const newCity = useSelector((state) => state.gear.cityWeather)
   const newNum = useSelector((state) => state.gear.currNumVisList)
-
-  const [btnOnCal, setBtnOnCal] = useState(LIGHT_COLOR)
-  const [btnOffCal, setBtnOffCal] = useState(DARK_COLOR)
-  const [btnOnWea, setBtnOnWea] = useState(LIGHT_COLOR)
-  const [btnOffWea, setBtnOffWea] = useState(DARK_COLOR)
-  const [btnOnStat, setBtnOnStat] = useState(LIGHT_COLOR)
-  const [btnOffStat, setBtnOffStat] = useState(DARK_COLOR)
+  const calendar = useSelector((state) => state.gear.showCalendar)
+  const weather = useSelector((state) => state.gear.showWeather)
+  const statTable = useSelector((state) => state.gear.showStatTable)
 
   const handlePosScrollBar = () => {
     setPosScroll(window.scrollY)
@@ -50,37 +48,22 @@ const Settings = () => {
 
   const openCalendar = () => {
     dispatch(showCalen(true))
-    setBtnOnCal(LIGHT_COLOR)
-    setBtnOffCal(DARK_COLOR)
   }
   const closeCalendar = () => {
     dispatch(showCalen(false))
-    setBtnOnCal(DARK_COLOR)
-    setBtnOffCal(LIGHT_COLOR)
   }
   const openWeather = () => {
     dispatch(showWeath(true))
-    setBtnOnWea(LIGHT_COLOR)
-    setBtnOffWea(DARK_COLOR)
   }
   const closeWeather = () => {
     dispatch(showWeath(false))
-    setBtnOnWea(DARK_COLOR)
-    setBtnOffWea(LIGHT_COLOR)
   }
   const openStatistic = () => {
     dispatch(showStat(true))
-    setBtnOnStat(LIGHT_COLOR)
-    setBtnOffStat(DARK_COLOR)
   }
   const closeStatistic = () => {
     dispatch(showStat(false))
-    setBtnOnStat(DARK_COLOR)
-    setBtnOffStat(LIGHT_COLOR)
   }
-
-  const [city, setCity] = useState('')
-  const [numOfCase, setNumOfCase] = useState('')
 
   const cityChange = (e) => {
     e.preventDefault()
@@ -96,7 +79,7 @@ const Settings = () => {
       <div
         className={styles.frame}
         style={{
-          top: `${posScroll + 50}px`,
+          top: `${posScroll + 25}px`,
         }}
       >
         <div className={styles.function}>
@@ -107,7 +90,7 @@ const Settings = () => {
               <button
                 onClick={openCalendar}
                 style={{
-                  color: `${btnOnCal}`,
+                  color: `${calendar ? LIGHT_COLOR : DARK_COLOR}`,
                 }}
               >
                 Вкл
@@ -116,7 +99,7 @@ const Settings = () => {
               <button
                 onClick={closeCalendar}
                 style={{
-                  color: `${btnOffCal}`,
+                  color: `${calendar ? DARK_COLOR : LIGHT_COLOR}`,
                 }}
               >
                 Выкл
@@ -128,7 +111,7 @@ const Settings = () => {
               <button
                 onClick={openWeather}
                 style={{
-                  color: `${btnOnWea}`,
+                  color: `${weather ? LIGHT_COLOR : DARK_COLOR}`,
                 }}
               >
                 Вкл
@@ -137,7 +120,7 @@ const Settings = () => {
               <button
                 onClick={closeWeather}
                 style={{
-                  color: `${btnOffWea}`,
+                  color: `${weather ? DARK_COLOR : LIGHT_COLOR}`,
                 }}
               >
                 Выкл
@@ -165,7 +148,7 @@ const Settings = () => {
               <button
                 onClick={openStatistic}
                 style={{
-                  color: `${btnOnStat}`,
+                  color: `${statTable ? LIGHT_COLOR : DARK_COLOR}`,
                 }}
               >
                 Вкл
@@ -174,7 +157,7 @@ const Settings = () => {
               <button
                 onClick={closeStatistic}
                 style={{
-                  color: `${btnOffStat}`,
+                  color: `${statTable ? DARK_COLOR : LIGHT_COLOR}`,
                 }}
               >
                 Выкл

@@ -73,7 +73,14 @@ const ToDoPoints = () => {
                 {newCase.topic} {newCase.isDone && <Done />}
               </div>
               <div className={styles.pointDate}>{newCase.date}</div>
-              <div className={styles.whatToDo}>{newCase.comment}</div>
+              <div
+                className={styles.whatToDo}
+                style={{
+                  color: `${newCase.isDone ? DARK_COLOR : '#ffffffcd'}`,
+                }}
+              >
+                {newCase.comment}
+              </div>
               <div
                 className={styles.btnExtra}
                 onClick={() => handleExtraCase(newCase)}
