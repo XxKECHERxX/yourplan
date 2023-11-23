@@ -4,6 +4,7 @@
  - HTML
  - CSS Modules
  - Javascript
+ - React
  - Redux Toolkit
  - Firebase Authentication
  - Firestore Database
