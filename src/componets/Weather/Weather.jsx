@@ -10,7 +10,7 @@ const Weather = () => {
 
   useEffect(() => {
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=244151b87ec73685e0c7cac7d98fb3b4`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=244151b87ec73685e0c7cac7d98fb3b4`
     )
       .then((response) => response.json())
       .then((data) => {
