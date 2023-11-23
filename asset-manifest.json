@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/yourplan/static/css/main.71e3397c.css",
+    "main.js": "/yourplan/static/js/main.23cb980b.js",
+    "index.html": "/yourplan/index.html",
+    "main.71e3397c.css.map": "/yourplan/static/css/main.71e3397c.css.map",
+    "main.23cb980b.js.map": "/yourplan/static/js/main.23cb980b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71e3397c.css",
+    "static/js/main.23cb980b.js"
+  ]
+}
