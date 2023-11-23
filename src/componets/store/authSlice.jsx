@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { doc, setDoc } from 'firebase/firestore'
+import { db } from '../../firebase'
 
 const authSlice = createSlice({
   name: 'user',
@@ -11,8 +13,8 @@ const authSlice = createSlice({
     },
   },
   reducers: {
-    openLogFrame (state, action) {
-        state.showLogFrame = action.payload
+    openLogFrame(state, action) {
+      state.showLogFrame = action.payload
     },
     setUser(state, action) {
       state.singInUser.email = action.payload.email
@@ -24,9 +26,15 @@ const authSlice = createSlice({
       state.singInUser.token = null
       state.singInUser.id = null
     },
+    addDocsFire(state, action) {
+      setDoc(doc(db, 'usersCases', state.singInUser.id), {
+        userCases: action.payload,
+      })
+    },
   },
 })
 
-export const { openLogFrame, setUser, removeUser } = authSlice.actions
+export const { openLogFrame, setUser, removeUser, addDocsFire } =
+  authSlice.actions
 
 export default authSlice.reducer

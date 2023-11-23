@@ -1,7 +1,7 @@
 .react-calendar {
   border-radius: 10px;
   background-color: #282828;
-  width: inherit;
+  width: 275px;
   height: 250px;
   margin-bottom: 7px;
 }

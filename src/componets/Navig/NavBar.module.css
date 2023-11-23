@@ -30,6 +30,26 @@
 .clientName {
   color: #fff;
   font-size: 20px;
+  margin-right: 20px;
+}
+
+.btnSave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px 8px 16px;
+  margin: 0;
+  color: #ffffffc3;
+  font-size: 14px;
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  border: 2px solid #0e6600;
+  cursor: pointer;
+  background-color: #00000000;
+}
+
+.btnSave:hover {
+  background-color: #0e660065;
 }
 
 .settings {

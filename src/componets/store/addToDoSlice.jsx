@@ -14,9 +14,10 @@ const addToDoSlice = createSlice({
       const newCase = action.payload
       const length = state.list.length
       const newId = length
+      const newDate = new Date()
 
       state.list.unshift({
-        id: newId,
+        id: newDate.getTime(),
         extra: newCase.extraCase,
         topic: newCase.nameCase,
         keyWords: newCase.nameCase.toLowerCase().split(' '),
@@ -57,9 +58,17 @@ const addToDoSlice = createSlice({
       let keyWord = action.payload.toLowerCase()
 
       let hasKeyCases = state.list.filter((el) => el.keyWords.includes(keyWord))
-      let NotHasKeyCases = state.list.filter((el) => !el.keyWords.includes(keyWord))
+      let NotHasKeyCases = state.list.filter(
+        (el) => !el.keyWords.includes(keyWord)
+      )
 
       state.list = hasKeyCases.concat(NotHasKeyCases)
+    },
+    loadUserCases(state, action) {
+      state.list = [...state.list, ...action.payload]
+    },
+    clearListLogOut(state, action) {
+      state.list = []
     },
   },
 })
@@ -74,7 +83,9 @@ export const {
   sortFromNewToOld,
   sortByTime,
   filterIsDone,
-  searchTopic
+  searchTopic,
+  loadUserCases,
+  clearListLogOut,
 } = addToDoSlice.actions
 
 export default addToDoSlice.reducer
