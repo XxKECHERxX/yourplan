@@ -11,7 +11,6 @@ import { useState } from 'react'
 
 const ToDoList = () => {
   const caseList = useSelector((state) => state.addToDo.list)
-  // const dbList = useSelector((state) => state.auth.fireList)
 
   const [typeOfsort, setTypeOfsort] = useState(false)
   const [findTopic, setFindTopic] = useState('')

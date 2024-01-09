@@ -119,6 +119,7 @@ const LogFrame = () => {
               type="password"
               value={pass}
               onChange={(e) => setPass(e.target.value)}
+              autoComplete="on"
             />
           </label>
           <div className={styles.btnsEnter}>

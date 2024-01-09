@@ -12,8 +12,6 @@ const addToDoSlice = createSlice({
     },
     addCase(state, action) {
       const newCase = action.payload
-      const length = state.list.length
-      const newId = length
       const newDate = new Date()
 
       state.list.unshift({
