@@ -11,9 +11,9 @@ import { useState } from 'react'
 
 const ToDoList = () => {
   const caseList = useSelector((state) => state.addToDo.list)
-
+  let filterForm = useSelector((state) => state.addToDo.filterForm)
+ 
   const [typeOfsort, setTypeOfsort] = useState(false)
-  const [findTopic, setFindTopic] = useState('')
 
   const dispatch = useDispatch()
 
@@ -30,12 +30,10 @@ const ToDoList = () => {
 
   const handleSearch = (e) => {
     e.preventDefault()
-    setTypeOfsort(false)
-    dispatch(searchTopic(findTopic))
+    dispatch(searchTopic(e.target.value))
   }
 
   const handleRefresh = () => {
-    setFindTopic('')
     dispatch(sortFromNewToOld())
   }
 
@@ -46,16 +44,16 @@ const ToDoList = () => {
         <div className={styles.btnsBar}>
           {!typeOfsort ? (
             <>
-              <form className={styles.search} onSubmit={handleSearch}>
+              <form className={styles.search}>
                 <label>
                   <input
                     type="text"
-                    value={findTopic}
-                    onChange={(e) => setFindTopic(e.target.value)}
+                    value={filterForm}
+                    onChange={handleSearch}
                     placeholder="ключевое слово"
                   />
                 </label>
-                <button className={styles.btnSearch} type="submit">
+                <button className={styles.btnSearch} type="button">
                   <Search />
                 </button>
               </form>

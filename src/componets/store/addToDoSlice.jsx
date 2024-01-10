@@ -5,6 +5,7 @@ const addToDoSlice = createSlice({
   initialState: {
     list: [],
     showAddForm: false,
+    filterForm: '',
   },
   reducers: {
     showForm(state, action) {
@@ -18,7 +19,7 @@ const addToDoSlice = createSlice({
         id: newDate.getTime(),
         extra: newCase.extraCase,
         topic: newCase.nameCase,
-        keyWords: newCase.nameCase.toLowerCase().split(' '),
+        keyWords: newCase.nameCase.toLowerCase(),
         date: newCase.dateCase.split('-').reverse().join('.'),
         dateCode: newCase.dateCase.split('-').join(''),
         comment: newCase.descriptionCase,
@@ -44,6 +45,7 @@ const addToDoSlice = createSlice({
       state.list = state.list.sort((a, b) => b.extra - a.extra)
     },
     sortFromNewToOld(state, action) {
+      state.filterForm = ''
       state.list = state.list.sort((a, b) => b.id - a.id)
     },
     sortByTime(state, action) {
@@ -53,14 +55,21 @@ const addToDoSlice = createSlice({
       state.list = state.list.sort((a, b) => a.isDone - b.isDone)
     },
     searchTopic(state, action) {
-      let keyWord = action.payload.toLowerCase()
+      state.filterForm = action.payload
 
-      let hasKeyCases = state.list.filter((el) => el.keyWords.includes(keyWord))
-      let NotHasKeyCases = state.list.filter(
-        (el) => !el.keyWords.includes(keyWord)
-      )
+      if (!!action.payload) {
+        const keyWord = state.filterForm.toLowerCase()
+        const newReg = RegExp(`${keyWord}`)
 
-      state.list = hasKeyCases.concat(NotHasKeyCases)
+        let hasKeyCases = state.list.filter((el) => newReg.test(el.keyWords))
+        let NotHasKeyCases = state.list.filter(
+          (el) => !newReg.test(el.keyWords)
+        )
+
+        state.list = hasKeyCases.concat(NotHasKeyCases)
+      } else {
+        state.list = state.list.sort((a, b) => b.id - a.id)
+      }
     },
     loadUserCases(state, action) {
       state.list = [...state.list, ...action.payload]
